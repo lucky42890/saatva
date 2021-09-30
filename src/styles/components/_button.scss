@@ -1,0 +1,31 @@
+.btn {
+  font-size: 14px;
+  width: 100%;
+  cursor: pointer;
+
+  &.filled {
+    background: $color_btn_bg_grey;
+    border: 1px solid $color_btn_color_grey;
+    color: $color_btn_color_white;
+    padding: 12px 4px;
+  }
+
+  &.outlined {
+    background: $color_btn_bg_white;
+    border: 1px solid $color_btn_color_grey;
+    color: $color_btn_color_grey;
+    padding: 12px 4px;
+  }
+
+  @media (min-width: 576px) {
+    font-size: 16px;
+
+    &.filled {
+      padding: 12px;
+    }
+  
+    &.outlined {
+      padding: 12px;
+    }
+  }
+}

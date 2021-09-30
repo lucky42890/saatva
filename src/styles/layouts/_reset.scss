@@ -1,0 +1,17 @@
+/*
+* Reset default values
+*/
+
+body {
+  margin: 0;
+  background: $color_app_bg;
+  min-height: 100vh;
+}
+
+p {
+  margin: 0;
+}
+
+* {
+  font-family: 'Questrial';
+}

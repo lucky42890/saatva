@@ -1,0 +1,38 @@
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cart-link {
+  cursor: pointer;
+  position: relative;
+  border: none;
+  background: transparent;
+  padding: 0;
+}
+
+.cart-count {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: -6px;
+  right: -11px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background-color: $color_icon_logo;
+  color: #fff;
+  font-size: 10px;
+}
+
+.icon-logo {
+  fill: $color_icon_logo;
+  stroke: none;
+  width: 110px;
+}
+
+.icon-cart {
+  fill: $color_icon_cart;
+}

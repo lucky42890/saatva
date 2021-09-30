@@ -1,24 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import { useEffect, useState } from "react/cjs/react.development";
+import Mattress from "./components/Mattress";
+import NavBar from "./components/NavBar";
+import { CartContextProvider } from './utils/cartContext';
 
-function App() {
+const App = () => {
+  const [numberOfProducts, setNumberOfProducts] = useState(0);
+
+  useEffect(() => {
+    setNumberOfProducts(parseInt(localStorage.getItem('numberOfProducts'), 10) || 0);
+  }, []);
+
+  const increaseNumberOfProducts = () => {
+    localStorage.setItem('numberOfProducts', numberOfProducts + 1);
+    setNumberOfProducts(numberOfProducts + 1);
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <CartContextProvider
+        value={{
+          cartNumber: numberOfProducts,
+          increaseCartNumber: increaseNumberOfProducts
+        }}
+      >
+        <NavBar />
+        
+        <div className="app-content">
+          <Mattress />
+        </div>
+      </CartContextProvider>
+    </>
   );
 }
 
